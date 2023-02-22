@@ -3,14 +3,16 @@ const Controller = require("../controllers/products");
 const CategoriesController = require("../controllers/categories");
 
 Router.get("/products", async (req, res, next) => {
+  let categories = await CategoriesController.getAll();
   let products = await Controller.getAll();
   console.log(products);
-  res.render("product-form", { products });
+  res.render("product-form", { categories, products });
 });
-Router.get("/categories", async (req, res, next) => {
-  let categories = await CategoriesController.getAll();
-  res.render("cat-form", { categories });
-});
+
+// Router.get("/categories", async (req, res, next) => {
+// let categories = await CategoriesController.getAll();
+//   res.render("cat-form", { categories });
+// });
 
 Router.post("/create", async (req, res, next) => {
   try {
