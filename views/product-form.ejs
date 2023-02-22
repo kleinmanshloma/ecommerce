@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Form</title>
+    <link rel="stylesheet" href="../table.css" />
+  </head>
+  <body>
+    <form method="post">
+      <input type="text" name="name" value="<%= products.ProductName %>" />
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Category ID</th>
+        </tr>
+        <% for(const product of products) { %>
+        <tr>
+          <td><%= product.ProductId %></td>
+          <td><%= product.ProductName %></td>
+          <td><%= product.Price %></td>
+          <td><%= product.Description %></td>
+          <td><%= product.Image %></td>
+          <td><%= product.CategoryId %></td>
+        </tr>
+        <% } %>
+      </table>
+
+      <select name="CategoryId">
+        <option value="">Select Category</option>
+        <% for(const cat of categories) { %>
+        <option value="<%= cat.CategoryId %>"><%= cat.Name %></option>
+        <% } %>
+      </select>
+
+      <input name="Image" type="file" />
+    </form>
+  </body>
+</html>
