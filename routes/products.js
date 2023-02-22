@@ -1,11 +1,15 @@
 const Router = require("express").Router();
 const Controller = require("../controllers/products");
-/* const CategoriesController = require("../controllers/categories"); */
+const CategoriesController = require("../controllers/categories");
 
 Router.get("/products", async (req, res, next) => {
   let products = await Controller.getAll();
   console.log(products);
   res.render("product-form", { products });
+});
+Router.get("/categories", async (req, res, next) => {
+  let categories = await CategoriesController.getAll();
+  res.render("cat-form", { categories });
 });
 
 Router.post("/create", async (req, res, next) => {

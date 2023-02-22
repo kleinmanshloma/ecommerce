@@ -6,7 +6,7 @@ module.exports = {
 };
 
 async function getAll() {
-  return (products = knex.select().from("Products"));
+  return knex.select().from("Products");
   /* try {
     const products = await knex.select().from("Products");
     console.log(products);
