@@ -1,7 +1,7 @@
 const Router = require("express").Router();
 const Controller = require("../controllers/categories");
 
-Router.get("/create", async (req, res, next) => {
+Router.get("/categories", async (req, res, next) => {
   let categories = await Controller.getAll();
   res.render("cat-form", { categories });
 });

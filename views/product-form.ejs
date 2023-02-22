@@ -32,13 +32,6 @@
         <% } %>
       </table>
 
-      <select name="CategoryId">
-        <option value="">Select Category</option>
-        <% for(const cat of categories) { %>
-        <option value="<%= cat.CategoryId %>"><%= cat.Name %></option>
-        <% } %>
-      </select>
-
       <input name="Image" type="file" />
     </form>
   </body>
