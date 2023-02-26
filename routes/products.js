@@ -2,6 +2,7 @@ const Router = require("express").Router();
 const Controller = require("../controllers/products");
 const CategoriesController = require("../controllers/categories");
 
+// HERE YOU HAVE 2 VIEWS 1. TO GET ALL categories 2. TO GET ALL products
 Router.get("/products", async (req, res, next) => {
   let categories = await CategoriesController.getAll();
   let products = await Controller.getAll();
@@ -10,7 +11,7 @@ Router.get("/products", async (req, res, next) => {
 });
 
 // Router.get("/categories", async (req, res, next) => {
-// let categories = await CategoriesController.getAll();
+//   let categories = await CategoriesController.getAll();
 //   res.render("cat-form", { categories });
 // });
 
