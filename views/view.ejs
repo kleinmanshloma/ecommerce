@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../table.css" />
+  </head>
+  <body>
+    <table>
+      <caption>
+        Categories
+      </caption>
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+      </thead>
+      <% for(const cat of categories) { %>
+      <tr>
+        <td><%= cat.CategoryId %></td>
+        <td><%= cat.Name %></td>
+        <td><%= cat.Description %></td>
+      </tr>
+      <% } %>
+    </table>
+
+    <!-- <select name="CategoryId">
+    <option value="">Select Category</option>
+    <% for(const product of products) { %>
+    <option value="<%= product.CategoryId %>">
+      <%= product.ProductName %>
+    </option>
+    <% } %>
+  </select> -->
+
+    <table>
+      <caption>
+        Products
+      </caption>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Image</th>
+      </tr>
+      <% for(const product of products) { %>
+      <tr>
+        <td><%= product.ProductId %></td>
+        <td><%= product.ProductName %></td>
+        <td><%= product.Price %></td>
+        <td><%= product.Description %></td>
+        <td>
+          <img
+            height="100px"
+            src="../assets/<%= product.Image %>"
+            alt="product image"
+          />
+        </td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>

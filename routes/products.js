@@ -7,13 +7,8 @@ Router.get("/products", async (req, res, next) => {
   let categories = await CategoriesController.getAll();
   let products = await Controller.getAll();
   console.log(products);
-  res.render("product-form", { categories, products });
+  res.render("view", { categories, products });
 });
-
-// Router.get("/categories", async (req, res, next) => {
-//   let categories = await CategoriesController.getAll();
-//   res.render("cat-form", { categories });
-// });
 
 Router.post("/create", async (req, res, next) => {
   try {
